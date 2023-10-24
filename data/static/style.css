@@ -1,0 +1,20 @@
+[data-testid="stSidebar"] {
+    background-image: url(https://ej3faa.p3cdn1.secureserver.net/wp-content/uploads/2020/12/logo-dragon.png?time=1698092779);
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: 70px 20px;
+    background-position-x: center;
+}
+
+section[data-testid="stSidebar"].css-ng1t4o {
+    width: 30rem;
+}
+
+p.paragraph {
+    font-family: monospace; 
+    color:gray; 
+    font-size: 11px
+}
+
+
+
