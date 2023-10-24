@@ -413,8 +413,8 @@ class FileCleaner:
          .query('planeado != 0')
          .groupby(['sku', 'descripcion'])
          .agg(
-             planeado=pd.NamedAgg('planeado', sum),
-             producido=pd.NamedAgg('producido', sum)
+             planeado=pd.NamedAgg('planeado', 'sum'),
+             producido=pd.NamedAgg('producido', 'sum')
          )
          .reset_index()
          .assign(
@@ -495,8 +495,8 @@ class FileCleaner:
          .query('planeado != 0')
          .groupby(['sku', 'descripcion'])
          .agg(
-             planeado=pd.NamedAgg('planeado', sum),
-             producido=pd.NamedAgg('producido', sum)
+             planeado=pd.NamedAgg('planeado', 'sum'),
+             producido=pd.NamedAgg('producido', 'sum')
          )
          .reset_index()
          .assign(
