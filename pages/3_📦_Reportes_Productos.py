@@ -112,7 +112,7 @@ def render_page():
     datos_producto = fc.get_values_for_sku(sku=selected_sku)
     
     show_aggregated_insights(datos_producto)
-    st.dataframe(datos_producto, hide_index=True)
+    st.dataframe(datos_producto, hide_index=True, use_container_width=True)
     download_df(df=datos_producto, selected_sku=selected_sku)
 
         
