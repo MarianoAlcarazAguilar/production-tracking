@@ -685,8 +685,8 @@ class FileCleaner:
          .assign(sku=lambda df: df.sku.apply(self.__limpia_cadena))
          .groupby(grouping_columns)
          .agg(
-             planeado=pd.NamedAgg('planeado', np.sum),
-             producido=pd.NamedAgg('producido', np.sum),
+             planeado=pd.NamedAgg('planeado', 'sum'),
+             producido=pd.NamedAgg('producido', 'sum'),
              lista_datos=pd.NamedAgg('porcentaje', list)
          )
          .assign(
