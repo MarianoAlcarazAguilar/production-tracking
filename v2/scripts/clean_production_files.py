@@ -1,5 +1,5 @@
-from my_scripts.new_excel_functions import DataExtraction
-from errores import FechaNoEsLunes, FechaNoEncontrada, ArchivoNoPermitido, ColumnasNoCoinciden
+from scripts.my_scripts.new_excel_functions import DataExtraction
+from scripts.errores import FechaNoEsLunes, FechaNoEncontrada, ArchivoNoPermitido, ColumnasNoCoinciden
 import pandas as pd
 import numpy as np
 import datetime
