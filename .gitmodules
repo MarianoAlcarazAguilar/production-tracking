@@ -1,3 +1,6 @@
 [submodule "scripts/my_scripts"]
 	path = scripts/my_scripts
 	url = https://github.com/MarianoAlcarazAguilar/my_scripts
+[submodule "v2/scripts/my_scripts"]
+	path = v2/scripts/my_scripts
+	url = https://github.com/MarianoAlcarazAguilar/my_scripts
