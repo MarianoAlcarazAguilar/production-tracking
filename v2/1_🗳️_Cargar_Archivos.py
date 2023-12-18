@@ -139,7 +139,7 @@ def update_catalogo(catalogo_actual:str, nuevo_catalogo, directorio_historicos:s
     # Nos aseguramos de que las columnas de los dos archivos sean iguales
     actual = pd.read_excel(catalogo_actual)
     nuevo = pd.read_excel(nuevo_catalogo)
-    if not nuevo.equals(actual):
+    if not nuevo.columns.equals(actual.columns):
         st.error('Las columnas de los archivos no coinciden')
         return False
     
@@ -163,34 +163,39 @@ def show_files_in_directory(directory:str):
         file_name=chosen_file
     )
 
+def open_cleaners(catalogo:str, clean_data:str):
+    liquido_cleaner = LiquidoCleaner(catalogo_file=catalogo, clean_data_file=clean_data)
+    polvo_cleaner = PolvoCleaner(catalogo_file=catalogo, clean_data_file=clean_data)
+    lerma_cleaner = LermaCleaner(catalogo_file=catalogo, clean_data_file=clean_data)
+
+    return liquido_cleaner, polvo_cleaner, lerma_cleaner
+
 def render_page():
     open_styles()
     
     catalogo = 'data/catalogo_productos.xlsx'
     clean_data = 'data/datos_produccion.parquet'
 
-    liquido_cleaner = LiquidoCleaner(catalogo_file=catalogo, clean_data_file=clean_data)
-    polvo_cleaner = PolvoCleaner(catalogo_file=catalogo, clean_data_file=clean_data)
-    lerma_cleaner = LermaCleaner(catalogo_file=catalogo, clean_data_file=clean_data)
+    liquido_cleaner, polvo_cleaner, lerma_cleaner = open_cleaners(catalogo=catalogo, clean_data=clean_data)
 
+    # ------ SIDEBAR ------
     st.sidebar.write('''
         <p class="paragraph" align="justify">
             En esta página puedes cargar los archivos operacionales de planeación de producción para que se actualicen de forma automática
         </p>''',
     unsafe_allow_html=True)
-
     type_of_file = st.sidebar.radio('Elige el tipo de archivo a subir', ['Polvos', 'Líquidos', 'Lerma'])
+    catalogo_expander(catalogo_actual=catalogo)
 
+    # ------- BODY --------
     if type_of_file == 'Polvos':
         update_polvos(polvo_cleaner=polvo_cleaner)
-
     elif type_of_file == 'Líquidos':
         update_liquidos(liquido_cleaner=liquido_cleaner)
-
     elif type_of_file == "Lerma":
         update_lerma(lerma_cleaner=lerma_cleaner)
 
-    catalogo_expander(catalogo_actual=catalogo)
+    
 
 if __name__ == '__main__':
     render_page()
