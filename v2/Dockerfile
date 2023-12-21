@@ -11,7 +11,7 @@ COPY pages/ /app/pages/
 COPY scripts/ /app/scripts/
 COPY data/ /app/data/
 COPY .streamlit/ /app/.streamlit/
-COPY 1__Reportes.py /app/
+COPY 1__Reportes.py /app/1__Reportes.py
 COPY requirements.txt /app/
 
 # Montamos todo para que pueda ejecutarse la aplicación
