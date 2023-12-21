@@ -110,7 +110,7 @@ def catalogo_expander(catalogo_actual:str, directorio_historicos:str='data/histo
 
     catalogo_actual: la ubicación del archivo de catálogo actual
     """
-    os.mkdir(directorio_historicos, exist_ok=True)
+    os.makedirs(directorio_historicos, exist_ok=True)
     with st.sidebar.expander("Catálogo de productos"):
         historico, actualizar = st.tabs(["Histórico", "Actualizar"])
         with historico:
