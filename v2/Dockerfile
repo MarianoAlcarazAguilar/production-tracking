@@ -17,7 +17,7 @@ COPY requirements.txt /app/
 # Montamos todo para que pueda ejecutarse la aplicación
 # Yo no lo voy a hacer dentro de un ambiente virtual.
 RUN pip install -r requirements.txt 
-# RUN mv 1__Cargar_Archivos.py 1_📝_Reportes.py
+RUN mv /app/1__Cargar_Archivos.py /app/1_📝_Reportes.py
 
 # Mencionamos el puerto que vamos a exponer al ejecutar el contenedor
 ENV PORT 8501
