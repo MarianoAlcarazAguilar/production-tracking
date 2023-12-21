@@ -122,7 +122,7 @@ def filtro_producto(data_processor:DataProcessor):
     st.title('KPIS PRODUCTO')
     col_kpis, col_datos = st.columns((.4, .6))
     display_kpis(kpis, col_kpis, sku=True)
-    display_data_col(data_processor.filtered_data, col_datos, f'reporte_familia_{chosen_sku.lower()}', 'reporte de producto')
+    display_data_col(data_processor.filtered_data, col_datos, f'reporte_producto_{chosen_sku.lower()}', 'reporte de producto')
 
 
 def render_page():
