@@ -25,4 +25,4 @@ ENV PORT 8501
 # Quiero que puedan sobreescribir el comando
 # Si se desea lo contrario, solo descomentar ENTRYPOINT
 # ENTRYPOINT [ "executable" ] [ "streamlit", "run", "1_📝_Reportes.py" ]
-CMD [ "streamlit", "run", "1__Reportes.py" ]
+CMD [ "streamlit", "run", "1_📝_Reportes.py" ]
