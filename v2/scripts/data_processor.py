@@ -54,8 +54,7 @@ class DataProcessor:
         return min_date, max_date
     
     def get_my_kpis(self):
-        if self.filtro == 'familia': return self.__get_kpis_by_familia_and_marca()
-        if self.filtro == 'marca': return self.__get_kpis_by_familia_and_marca()
+        return self.__get_kpis_by_familia_and_marca()
 
     def __get_kpis_by_familia_and_marca(self) -> dict:
         """
