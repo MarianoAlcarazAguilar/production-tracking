@@ -170,8 +170,16 @@ def open_cleaners(catalogo:str, clean_data:str):
 
     return liquido_cleaner, polvo_cleaner, lerma_cleaner
 
+def add_description_to_page():
+    st.sidebar.write('''
+        <p class="paragraph" align="justify">
+            En esta página puedes cargar los archivos operacionales de planeación de producción para que se actualicen de forma automática
+        </p>''',
+    unsafe_allow_html=True)
+
 def render_page():
     open_styles()
+    add_description_to_page()
     
     catalogo = 'data/catalogo_productos.xlsx'
     clean_data = 'data/datos_produccion.parquet'
@@ -179,11 +187,6 @@ def render_page():
     liquido_cleaner, polvo_cleaner, lerma_cleaner = open_cleaners(catalogo=catalogo, clean_data=clean_data)
 
     # ------ SIDEBAR ------
-    st.sidebar.write('''
-        <p class="paragraph" align="justify">
-            En esta página puedes cargar los archivos operacionales de planeación de producción para que se actualicen de forma automática
-        </p>''',
-    unsafe_allow_html=True)
     type_of_file = st.sidebar.radio('Elige el tipo de archivo a subir', ['Polvos', 'Líquidos', 'Lerma'])
     catalogo_expander(catalogo_actual=catalogo)
 
