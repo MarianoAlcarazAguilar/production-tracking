@@ -54,9 +54,10 @@ class DataProcessor:
         return min_date, max_date
     
     def get_my_kpis(self):
-        if self.filtro == 'familia': return self.__get_kpis_by_familia()
+        if self.filtro == 'familia': return self.__get_kpis_by_familia_and_marca()
+        if self.filtro == 'marca': return self.__get_kpis_by_familia_and_marca()
 
-    def __get_kpis_by_familia(self) -> dict:
+    def __get_kpis_by_familia_and_marca(self) -> dict:
         """
         Esta función regresa todos los kpis que se tienen para las familias, que son los siguientes:
             - Cuántos skus distintos hay
