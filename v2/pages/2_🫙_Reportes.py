@@ -35,6 +35,7 @@ def display_filtering_controls(data_processor:DataProcessor):
     # Permitimos al usuario elegir lo que usará de filtro
     valores = data_processor.get_available_values()
     chosen_value = st.sidebar.selectbox("Elige la familia", options=valores)
+    if data_processor.filtro == 'sku': chosen_value = chosen_value.split('-')[0].strip()
 
     # Ahora filtramos los datos de esa familia
     if not chosen_value: return

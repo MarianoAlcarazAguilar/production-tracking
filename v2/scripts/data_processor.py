@@ -37,6 +37,7 @@ class DataProcessor:
         Esta función se utiliza para tener las familias para las cuales se tienen datos disponibles
         """
         if self.filtro is None: return []
+        if self.filtro == 'sku': return sorted(list(self.datos.apply(lambda x: str(x.sku)+' - '+str(x.descripcion), axis=1).unique()))
         return sorted(list(self.datos[self.filtro].unique()))
     
     def get_available_dates(self):
