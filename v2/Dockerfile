@@ -18,7 +18,6 @@ COPY requirements.txt /app/
 # Yo no lo voy a hacer dentro de un ambiente virtual.
 RUN pip install -r requirements.txt 
 # RUN mv 1__Cargar_Archivos.py 1_📝_Reportes.py
-RUN git clone https://github.com/MarianoAlcarazAguilar/my_scripts /app/data/my_scripts
 
 # Mencionamos el puerto que vamos a exponer al ejecutar el contenedor
 ENV PORT 8501

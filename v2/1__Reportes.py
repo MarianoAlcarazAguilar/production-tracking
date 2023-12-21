@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from scripts.data_processor import DataProcessor
-from scripts.my_scripts.excel_functions import ExcelFunctions
+from scripts.excel_functions import ExcelFunctions
 
 def download_button(data, file_name, label:str='📥 Descargar Datos'):
     if data is not None:

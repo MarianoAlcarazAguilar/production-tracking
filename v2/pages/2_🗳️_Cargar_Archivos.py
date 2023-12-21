@@ -3,7 +3,7 @@ import shutil
 import datetime
 import streamlit as st
 from scripts.clean_production_files import LiquidoCleaner, PolvoCleaner, LermaCleaner
-from scripts.my_scripts.excel_functions import ExcelFunctions
+from scripts.excel_functions import ExcelFunctions
 import pandas as pd
 
 def download_button(data, file_name, label:str='📥 Descargar Datos'):
