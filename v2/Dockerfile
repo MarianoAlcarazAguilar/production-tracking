@@ -17,7 +17,7 @@ COPY requirements.txt /app/
 # Montamos todo para que pueda ejecutarse la aplicación
 # Yo no lo voy a hacer dentro de un ambiente virtual.
 RUN pip install -r requirements.txt 
-RUN mv 1__Cargar_Archivos.py 1_📝_Reportes.py
+# RUN mv 1__Cargar_Archivos.py 1_📝_Reportes.py
 RUN git clone https://github.com/MarianoAlcarazAguilar/my_scripts /app/data/my_scripts
 
 # Mencionamos el puerto que vamos a exponer al ejecutar el contenedor
@@ -26,4 +26,4 @@ ENV PORT 8501
 # Quiero que puedan sobreescribir el comando
 # Si se desea lo contrario, solo descomentar ENTRYPOINT
 # ENTRYPOINT [ "executable" ] [ "streamlit", "run", "1_📝_Reportes.py" ]
-CMD [ "streamlit", "run", "1_📝_Reportes.py" ]
+CMD [ "streamlit", "run", "1__Reportes.py" ]
